@@ -1,0 +1,7 @@
+D:\Work\Class Projects\3rd Year\Term1\Cookies\MPLABX\Version1\LowLevel.X\main.c:204:1:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@DIVFF64)
+D:\Work\Class Projects\3rd Year\Term1\Cookies\MPLABX\Version1\LowLevel.X\main.c:204:1:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@ADDFF)
+D:\Work\Class Projects\3rd Year\Term1\Cookies\MPLABX\Version1\LowLevel.X\main.c:204:1:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (UpdatePID)
+D:\Work\Class Projects\3rd Year\Term1\Cookies\MPLABX\Version1\LowLevel.X\main.c:204:1:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (Control_Motor)
+      Memory usage:   ROM=16%      RAM=3% - 5%
+      0 Errors,  4 Warnings.
+Build Successful.

@@ -1,0 +1,23 @@
+ÀÄTest
+   ÃÄMAIN  0/326  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄ@const755  0/32  Ram=0
+   ³  ÃÄ@PUTCHAR_1_  0/36  Ram=1
+   ³  ÃÄ@const756  0/30  Ram=0
+   ³  ÃÄ@PUTCHAR_1_  0/36  Ram=1
+   ³  ÃÄ@const757  0/30  Ram=0
+   ³  ÃÄ@PUTCHAR_1_  0/36  Ram=1
+   ³  ÃÄ@const758  0/30  Ram=0
+   ³  ÃÄ@PUTCHAR_1_  0/36  Ram=1
+   ³  ÃÄ@const759  0/30  Ram=0
+   ³  ÃÄ@PUTCHAR_1_  0/36  Ram=1
+   ³  ÃÄ@const760  0/18  Ram=0
+   ³  ÃÄ@PUTCHAR_1_  0/36  Ram=1
+   ³  ÃÄ@const761  0/18  Ram=0
+   ³  ÃÄ@PUTCHAR_1_  0/36  Ram=1
+   ³  ÃÄ@const762  0/18  Ram=0
+   ³  ÃÄ@PUTCHAR_1_  0/36  Ram=1
+   ³  ÃÄ@const763  0/18  Ram=0
+   ³  ÀÄ@PUTCHAR_1_  0/36  Ram=1
+   ÀÄrs232_isr  0/38  Ram=0
+      ÀÄ@GETCH_1_  0/38  Ram=0
