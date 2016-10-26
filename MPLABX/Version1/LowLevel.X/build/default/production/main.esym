@@ -1,7 +1,7 @@
 D G "__PCD__" 0 0 ""5.015""
 D G "__DEVICE__" 0 0 ""
-D G "__DATE__" 0 0 ""26-Oct-16""
-D G "__TIME__" 0 0 ""01:06:48""
+D G "__DATE__" 0 0 ""26-µ.¤.-16""
+D G "__TIME__" 0 0 ""15:09:13""
 D G "__PIC24FJ48GA002__" 0 0 "1" "Standard Header file for the PIC24FJ48GA002 device ////////////////"
 c L "set_tris_a" 1 3 6 "FUNCTION"
 v L "value" 1 44 "int16" `53 
@@ -1030,8 +1030,11 @@ D G "CPR" 2 47 "400.0"
 D G "Diameter" 2 48 "0.8" "unit centimeter - ****************Need"
 D G "Position_Per_Pulse" 2 49 " (2.0*PI*(Diameter/2.0))/CPR" "cm"
 D G "Speed" 2 50 "PI*Diameter/CPR"
-D G "MAX_SPD" 2 52 "180" "cm/s - ***************************Need Test"
-D G "MAX_CPR" 2 53 "MAX_SPD"
+D G "CPR_BY_QEI" 2 52 "800.0"
+D G "Lead_Pitch" 2 53 "2.0" "unit mm"
+D G "xPOSITION" 2 54 "Lead_Pitch/CPR_BY_QEI"
+D G "MAX_SPD" 2 56 "180" "cm/s - ***************************Need Test"
+D G "MAX_CPR" 2 57 "MAX_SPD"
 C L "jump_to_isr" 2 1 1 "FUNCTION"
 C L "jump_to_isr" 2 1 1 "FUNCTION"
 C L "jump_to_isr" 2 1 1 "FUNCTION"
@@ -1039,25 +1042,25 @@ C L "jump_to_isr" 2 1 1 "FUNCTION"
 C L "jump_to_isr" 2 1 1 "FUNCTION"
 C L "jump_to_isr" 2 1 1 "FUNCTION"
 C L "jump_to_isr" 2 1 1 "FUNCTION"
-T G "SPID" 2 64 "{float dState,float iState,float iMax,float iMin,float iGain,float pGain,float dGain}" `748 
-V L "pid" 2 66 "*SPID" `750 
-V L "Kp" 2 66 "float" `751 
-V L "Ki" 2 66 "float" `752 
-V L "Kd" 2 66 "float" `753 
-F G "PID_Init" 2 66 "void(*SPID pid,float Kp,float Ki,float Kd)" `749 
+T G "SPID" 2 68 "{float dState,float iState,float iMax,float iMin,float iGain,float pGain,float dGain}" `748 
+V L "pid" 2 70 "*SPID" `750 
+V L "Kp" 2 70 "float" `751 
+V L "Ki" 2 70 "float" `752 
+V L "Kd" 2 70 "float" `753 
+F G "PID_Init" 2 70 "void(*SPID pid,float Kp,float Ki,float Kd)" `749 
 C L "PID_Init" 2 1 1 "FUNCTION"
 C L "PID_Init" 2 1 1 "FUNCTION"
 C L "PID_Init" 2 1 1 "FUNCTION"
 C L "PID_Init" 2 1 1 "FUNCTION"
 C L "PID_Init" 2 1 1 "FUNCTION"
 C L "PID_Init" 2 1 1 "FUNCTION"
-V L "pid" 2 76 "*SPID" `755 
-V L "error" 2 76 "float" `756 
-V L "position" 2 76 "float" `757 
-F G "UpdatePID" 2 76 "float(*SPID pid,float error,float position)" `754 
-V L "pTerm" 2 77 "float" `758 
-V L "dTerm" 2 77 "float" `759 
-V L "iTerm" 2 77 "float" `760 
+V L "pid" 2 80 "*SPID" `755 
+V L "error" 2 80 "float" `756 
+V L "position" 2 80 "float" `757 
+F G "UpdatePID" 2 80 "float(*SPID pid,float error,float position)" `754 
+V L "pTerm" 2 81 "float" `758 
+V L "dTerm" 2 81 "float" `759 
+V L "iTerm" 2 81 "float" `760 
 C L "UpdatePID" 2 1 2 "FUNCTION"
 C L "UpdatePID" 2 1 1 "FUNCTION"
 C G "" 3 1 1 "*"
@@ -1071,43 +1074,46 @@ C G "" 4 1 1 "*"
 D G "CONFIG_H" 4 9 ""
 D G "DRIVE_MOTOR_X" 4 15 "1"
 D G "DRIVE_MOTOR_Y" 4 16 "2"
-D G "MOTOR_HZ" 4 18 "5"
-D G "MOTOR_X_PWM" 4 20 "PIN_B0"
-D G "MOTOR_Y_PWM" 4 21 "PIN_B1"
-D G "MOTOR_X_DIR" 4 24 "PIN_B4"
-D G "MOTOR_Y_DIR" 4 25 "PIN_B5"
-D G "ENCODER_X_A" 4 28 "0"
-D G "ENCODER_Y_A" 4 29 "1"
-D G "ENCODER_X_B" 4 30 "PIN_B3"
-D G "ENCODER_Y_B" 4 31 "PIN_B2"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 1 "*"
-C G "" 4 36 2 "*"
+D G "DRIVE_MOTOR_Z" 4 17 "3"
+D G "MOTOR_HZ" 4 19 "5"
+D G "MOTOR_X_PWM" 4 21 "PIN_B0"
+D G "MOTOR_Y_PWM" 4 22 "PIN_B1"
+D G "MOTOR_Z_PWM" 4 23 "PIN_B9"
+D G "MOTOR_X_DIR" 4 25 "PIN_B4"
+D G "MOTOR_Y_DIR" 4 26 "PIN_B5"
+D G "MOTOR_Z_DIR" 4 27 "PIN_B6"
+D G "ENCODER_X_A" 4 29 "0"
+D G "ENCODER_Y_A" 4 30 "1"
+D G "ENCODER_X_B" 4 31 "PIN_B3"
+D G "ENCODER_Y_B" 4 32 "PIN_B2"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 1 "*"
+C G "" 4 37 2 "*"
 D G "_STDIO" 5 12 ""
 D G "_STRING" 6 12 ""
 D G "_STDDEF" 7 13 ""
@@ -1589,57 +1595,60 @@ V L "n" 9 1322 "int16" `1106
 V L "pivot" 9 1323 "int16" `1107 
 V L "val" 9 1324 "sint16" `1108 
 C L "bsearch" 9 328 1 "FUNCTION"
-D G "RATE" 0 22 "0.1"
-D G "Kc" 0 23 "0.5"
-D G "Ti" 0 24 "0.0"
-D G "Td" 0 25 "0.05"
-V G "Motor_X" 0 26 "SPID" `1116 
-V G "Motor_Y" 0 26 "SPID" `1117 
-V G "En_x" 0 27 "Encoder" `1118 
-V G "En_y" 0 27 "Encoder" `1119 
-V G "plantCommand" 0 28 "float[2]" `1120 
-V G "position" 0 28 "float[2]" `1121 
-V G "drive" 0 28 "float[2]" `1122 
-V G "Z_Position" 0 30 "sint16" `1123 
-V G "SM_Buffer" 0 32 "sint8[20]" `1124 
-V G "SM_Index" 0 33 "sint16" `1125 
-V G "data" 0 34 "float[2]" `1126 
-V G "SM_Id" 0 35 "sint16" `1127 
-V G "isX" 0 36 "int1" `1128 
-V G "state" 0 37 "int1" `1129 
-V L "c" 0 39 "sint8" `1131 
-F G "SM_RxD" 0 39 "void(sint8 c)" `1130 
+D G "RATE" 0 23 "0.1"
+D G "Kc" 0 24 "0.5"
+D G "Ti" 0 25 "0.0"
+D G "Td" 0 26 "0.05"
+V G "Motor_X" 0 27 "SPID" `1116 
+V G "Motor_Y" 0 27 "SPID" `1117 
+V G "En_x" 0 28 "Encoder" `1118 
+V G "En_y" 0 28 "Encoder" `1119 
+V G "plantCommand" 0 29 "float[2]" `1120 
+V G "position" 0 29 "float[2]" `1121 
+V G "drive" 0 29 "float[2]" `1122 
+V G "Z_Position" 0 31 "sint16" `1123 
+V G "SM_Buffer" 0 33 "sint8[20]" `1124 
+V G "SM_Index" 0 34 "sint16" `1125 
+V G "data" 0 35 "float[2]" `1126 
+V G "SM_Id" 0 36 "sint16" `1127 
+V G "isX" 0 37 "int1" `1128 
+V G "state" 0 38 "int1" `1129 
+V L "c" 0 40 "sint8" `1131 
+F G "SM_RxD" 0 40 "void(sint8 c)" `1130 
 C L "SM_RxD" 0 10 1 "FUNCTION"
 C L "SM_RxD" 0 10 1 "FUNCTION"
-F G "UART1_Isr" 0 68 "void()" `1132 
-V L "c" 0 69 "sint8" `1133 
-F G "Init_ADC" 0 73 "void()" `1134 
-V L "channel" 0 80 "sint16" `1136 
-F G "Change_ADC_Read_Channel" 0 80 "void(sint16 channel)" `1135 
+F G "UART1_Isr" 0 69 "void()" `1132 
+V L "c" 0 70 "sint8" `1133 
+V L "channel" 0 74 "sint16" `1135 
+F G "Change_ADC_Read_Channel" 0 74 "void(sint16 channel)" `1134 
+F G "Init_ADC" 0 79 "void()" `1136 
 V L "motor_num" 0 85 "sint16" `1138 
 V L "speed_velo" 0 85 "float" `1139 
 F G "Control_Motor" 0 85 "void(sint16 motor_num,float speed_velo)" `1137 
-F G "INT_EXT_INPUT0" 0 99 "void()" `1140  "X Axis"
+V G "Encoder_Trig_State" 0 101 "int1[2]" `1140 
+V L "num_interrupt" 0 103 "sint16" `1142 
+F G "Encoder_Trig_Change" 0 103 "void(sint16 num_interrupt)" `1141  "Add QEI to encoder ==> CPR*2 so CPR = 400*2 = 800"
+C L "Encoder_Trig_Change" 0 10 1 "FUNCTION"
+C L "Encoder_Trig_Change" 0 10 1 "FUNCTION"
+F G "INT_EXT_INPUT0" 0 128 "void()" `1143  "X Axis"
 C L "INT_EXT_INPUT0" 0 10 1 "FUNCTION"
-C L "INT_EXT_INPUT0" 0 10 1 "FUNCTION"
-F G "INT_EXT_INPUT1" 0 112 "void()" `1143  "Y Axis"
+F G "INT_EXT_INPUT1" 0 148 "void()" `1146  "Y Axis"
 C L "INT_EXT_INPUT1" 0 10 1 "FUNCTION"
-C L "INT_EXT_INPUT1" 0 10 1 "FUNCTION"
-F G "Init_Interrupts" 0 123 "void()" `1144 
+F G "Init_Interrupts" 0 166 "void()" `1147 
 C L "Init_Interrupts" 0 10 1 "FUNCTION"
 C L "Init_Interrupts" 0 10 1 "FUNCTION"
-F G "Init_MotorPWM" 0 131 "void()" `1145 
-F G "PID_X_Y" 0 139 "void()" `1146 
+F G "Init_MotorPWM" 0 174 "void()" `1148 
+F G "PID_X_Y" 0 184 "void()" `1149 
 C L "PID_X_Y" 0 10 1 "FUNCTION"
 C L "PID_X_Y" 0 10 1 "FUNCTION"
 C L "MAIN" 0 10 8 "FUNCTION"
-F G "MAIN" 0 160 "void()" `1147 
+F G "MAIN" 0 205 "void()" `1150 
 C L "MAIN" 0 10 1 "FUNCTION"
 C L "MAIN" 0 10 1 "FUNCTION"
 C L "MAIN" 0 10 1 "FUNCTION"
-V L "Z_Position" 0 179 "sint16" `1150 
-V L "temp" 0 183 "sint16" `1152 
-V L "int_buffer" 0 188 "sint16" `1153 
+V L "Z_Position" 0 224 "sint16" `1153 
+V L "temp" 0 228 "sint16" `1155 
+V L "int_buffer" 0 233 "sint16" `1156 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

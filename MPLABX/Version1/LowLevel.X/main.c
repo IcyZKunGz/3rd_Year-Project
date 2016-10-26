@@ -15,9 +15,10 @@
 
 #use fixed_io(b_outputs= MOTOR_X_DIR, MOTOR_Y_DIR) //DIR x,y
 
-#PIN_SELECT OC1 = MOTOR_X_PWM //PWM_MOTOR_X
-#PIN_SELECT OC2 = MOTOR_Y_PWM //PWM_MOTOR_Y
-#PIN_SELECT INT1 = PIN_B8 //Y Axis - X is INT0
+#PIN_SELECT OC1 = MOTOR_X_PWM
+#PIN_SELECT OC2 = MOTOR_Y_PWM
+#PIN_SELECT OC3 = MOTOR_Z_PWM
+#PIN_SELECT INT1 = PIN_B8 //Encoder Y Axis - X is INT0
 
 #define RATE  0.1
 #define Kc   0.5
@@ -25,7 +26,7 @@
 #define Td    0.05
 SPID Motor_X, Motor_Y;
 Encoder En_x, En_y;
-float plantCommand[2]={0}, position[2]={0}, drive[2]={0}; //plantCommand = goal position - x,y
+float plantCommand[2] = {0}, position[2] = {0}, drive[2] = {0}; //plantCommand = goal position - x,y
 
 int Z_Position = 0;
 
@@ -70,16 +71,15 @@ void UART1_Isr() {
     SM_RxD(c);
 }
 
-void Init_ADC() {
-    setup_adc_ports(sAN0, VSS_VDD);
-    setup_adc(ADC_CLOCK_DIV_32);
-    set_adc_channel(0);
-    delay_us(10);
-}
-
 void Change_ADC_Read_Channel(int channel) {
     set_adc_channel(channel);
     delay_us(10);
+}
+
+void Init_ADC() {
+    setup_adc_ports(sAN0, VSS_VDD);
+    setup_adc(ADC_CLOCK_DIV_32);
+    Change_ADC_Read_Channel(0);
 }
 
 void Control_Motor(int motor_num, float speed_velo) {
@@ -91,6 +91,35 @@ void Control_Motor(int motor_num, float speed_velo) {
         if (speed_velo >= 0) output_high(MOTOR_Y_DIR);
         else output_low(MOTOR_Y_DIR);
         set_pwm_duty(DRIVE_MOTOR_Y, speed_velo);
+    } else if (motor_num == DRIVE_MOTOR_Z) {
+        if (speed_velo >= 0) output_high(MOTOR_Z_DIR);
+        else output_low(MOTOR_Z_DIR);
+        set_pwm_duty(DRIVE_MOTOR_Z, speed_velo);
+    }
+}
+
+boolean Encoder_Trig_State[2] = {FALSE};
+
+void Encoder_Trig_Change(int num_interrupt) { //Add QEI to encoder ==> CPR*2 so CPR = 400*2 = 800
+    if (num_interrupt == ENCODER_X_A) {
+        //enable_interrupts(INT_EXT0);
+        if (Encoder_Trig_State[0] == FALSE) {
+            ext_int_edge(ENCODER_X_A, L_TO_H);
+            Encoder_Trig_State[0] = TRUE;
+        } else {
+            ext_int_edge(ENCODER_X_A, H_TO_L);
+            Encoder_Trig_State[0] = FALSE;
+        }
+
+    } else {
+        //enable_interrupts(INT_EXT1);
+        if (Encoder_Trig_State[1] == FALSE) {
+            ext_int_edge(ENCODER_Y_A, L_TO_H);
+            Encoder_Trig_State[1] = TRUE;
+        } else {
+            ext_int_edge(ENCODER_Y_A, H_TO_L);
+            Encoder_Trig_State[1] = FALSE;
+        }
     }
 }
 
@@ -99,10 +128,17 @@ void Control_Motor(int motor_num, float speed_velo) {
 void INT_EXT_INPUT0(void) { //X Axis
     //Read Pulse from Encoder and compare pulse A and B
     En_x.B_signal = input(ENCODER_X_B);
-    if (En_x.B_signal == 0) En_x.Pulses += 1;
-    else En_x.Pulses -= 1;
+    if (En_x.B_signal == 0) {
+        if (Encoder_Trig_State[0] == FALSE) En_x.Pulses++;
+        else En_x.Pulses--;
+    } else {
+        if(Encoder_Trig_State[0] == FALSE) En_x.Pulses--;
+        else En_x.Pulses++;
+    }
 
-    position[0] = En_x.Pulses * Position_Per_Pulse; //Times of twist for 1 round ****************Need Test for TIMES_PER_ROUND
+    Encoder_Trig_Change(ENCODER_X_A);
+
+    position[0] = En_x.Pulses * xPOSITION;
     drive[0] = UpdatePID(&Motor_X, (plantCommand[0] - position[0]), position[0]);
     Control_Motor(DRIVE_MOTOR_X, drive[0]);
 }
@@ -112,10 +148,17 @@ void INT_EXT_INPUT0(void) { //X Axis
 void INT_EXT_INPUT1(void) { //Y Axis
     //Read Pulse from Encoder and compare pulse A and B 
     En_y.B_signal = input(ENCODER_Y_B);
-    if (En_y.B_signal == 0) En_y.Pulses += 1;
-    else En_y.Pulses -= 1;
+    if (En_y.B_signal == 0) {
+        if (Encoder_Trig_State[1] == FALSE) En_y.Pulses++;
+        else En_y.Pulses--;
+    } else {
+        if(Encoder_Trig_State[1] == FALSE) En_y.Pulses--;
+        else En_y.Pulses++;
+    }
 
-    position[1] = En_y.Pulses * Position_Per_Pulse; //Times of twist for 1 round ****************Need Test for TIMES_PER_ROUND
+    Encoder_Trig_Change(ENCODER_Y_A);
+
+    position[1] = En_y.Pulses * xPOSITION;
     drive[1] = UpdatePID(&Motor_Y, (plantCommand[1] - position[1]), position[1]);
     Control_Motor(DRIVE_MOTOR_Y, drive[1]);
 }
@@ -134,6 +177,8 @@ void Init_MotorPWM() {
     set_pwm_duty(DRIVE_MOTOR_X, 0);
     setup_compare(DRIVE_MOTOR_Y, COMPARE_PWM | COMPARE_TIMER3);
     set_pwm_duty(DRIVE_MOTOR_Y, 0);
+    setup_compare(DRIVE_MOTOR_Z, COMPARE_PWM | COMPARE_TIMER3);
+    set_pwm_duty(DRIVE_MOTOR_Z, 0);
 }
 
 void PID_X_Y() {
@@ -181,9 +226,9 @@ void main() {
     printf("Main\r\n");
     while (TRUE) {
         int temp = read_adc();
-        if(temp != 0)
+        if (temp != 0)
             Z_Position = temp;
-        
+
         if (state == TRUE) {
             int int_buffer = atoi(SM_Buffer);
             if (isX == TRUE)
@@ -192,14 +237,14 @@ void main() {
                 data[1] = int_buffer / 1000.0;
             plantCommand[0] = data[0];
             plantCommand[1] = data[1];
-            
-            PID_X_Y();
-            
-            state = FALSE;
-            
-            printf("%e  %e  %d\r\n",plantCommand[0],plantCommand[1],Z_Position);
-        }
 
+            PID_X_Y();
+
+            state = FALSE;
+
+            printf("%e  %e  %d\r\n", plantCommand[0], plantCommand[1], Z_Position);
+            //printf("%d   %d\r\n",En_x.B_signal,En_y.B_signal);
+        }
     }
 }
 

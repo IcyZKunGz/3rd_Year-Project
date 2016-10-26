@@ -1,29 +1,29 @@
 
-ROM used:   5504/33788 (16%)
-            5504/33788 (16%) including unused fragments
+ROM used:   5628/33788 (17%)
+            5628/33788 (17%) including unused fragments
 
             1.6 Average locations per line
-            8.6 Average locations per statement
+            8.3 Average locations per statement
 
-RAM used:   259/8192 (3%) at main() level
-            386/8192 (5%) worst case
+RAM used:   260/8192 (3%) at main() level
+            382/8192 (5%) worst case
 
 Stack size: 128
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  206    97  15  main.c
+  251   135  20  main.c
   862     0   0  C:\Program Files (x86)\PICC\devices\24FJ48GA002.h
-  383    17   3  PID.h
+  387    17   3  PID.h
    32     2   0  Motor.h
-   75     0   0  config.h
+   76     0   0  config.h
    37     0   0  C:\Program Files (x86)\PICC\drivers\stdio.h
   423     0   0  C:\Program Files (x86)\PICC\drivers\string.h
    32     0   0  C:\Program Files (x86)\PICC\drivers\stddef.h
    28     0   0  C:\Program Files (x86)\PICC\drivers\ctype.h
- 1351   524  82  C:\Program Files (x86)\PICC\drivers\stdlib.h
+ 1351   524  77  C:\Program Files (x86)\PICC\drivers\stdlib.h
 ----- -----
- 3429   640 Total
+ 3479   678 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
@@ -32,46 +32,47 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0    196   2    8             @MULFF
 0    426   4    8             @ADDFF
 0    104   1    8             @FLT
-0     30   0    5   143  1.1  Encoder_Init
+0     30   0    5   145  1.0  Encoder_Init
 0    412   4   15  1815 10.5  atoi
 0    272   2    0             @MULFF64
 0    100   1    0             @SI64TOF64
 0    264   2    8             @DIVFF64
 0     86   1    4   483  6.1  SM_RxD
 0     48   0    1    40  1.7  UART1_Isr
-0     22   0    0    78  1.6  Init_ADC
 0     10   0    2    42  1.1  Change_ADC_Read_Channel
-0     84   1    6   310  3.7  Control_Motor
-0    194   2    9   470  7.4  INT_EXT_INPUT0
+0     22   0    0    59  1.6  Init_ADC
+0    126   1    6   483  3.8  Control_Motor
+0     40   0    4   439  4.3  Encoder_Trig_Change
+0    208   2    9   616  7.5  INT_EXT_INPUT0
 0     68   1    0             @F64TO48
-0    194   2    9   470  7.4  INT_EXT_INPUT1
+0    210   2    9   616  7.5  INT_EXT_INPUT1
 0     12   0    0   108  1.7  Init_Interrupts
-0     24   0    0   176  2.3  Init_MotorPWM
+0     30   0    0   260  2.3  Init_MotorPWM
 0    398   4    9   603  5.2  PID_X_Y
-0    498   5    2  1024  6.3  MAIN
-0     20   0    0             @const1151
+0    504   4    2  1024  6.3  MAIN
+0     20   0    0             @const1154
 0     70   1    0             @F48TO64
 0    796   7    8             @PRINTF_E_9600_5725_5724
 0    246   2    0             @PRINTFD16_9600_5725_5724
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               15
-    Statements              640
+    Functions               16
+    Statements              678
     Comments                1168
-    Volume (V)              10621
-    Difficulty (D)          65.1
-    Effort to implement (E) 691170
-    Time to implement (T)   10 hours, 40 minutes
+    Volume (V)              12340
+    Difficulty (D)          69.4
+    Effort to implement (E) 856826
+    Time to implement (T)   13 hours, 13 minutes
     Est Delivered Bugs (B)  3
-    Cyclomatic Complexity   25
-    Maintainability (MI)    120
+    Cyclomatic Complexity   34
+    Maintainability (MI)    106
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
 00004-001FE   508  0  
-00200-083FA  4992  28284  
+00200-083FA  5116  28160  
 
 
 

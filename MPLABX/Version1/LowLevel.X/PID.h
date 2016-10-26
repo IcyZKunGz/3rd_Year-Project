@@ -48,6 +48,10 @@ extern "C" {
 #define Diameter 0.8 //unit centimeter - ****************Need
 #define Position_Per_Pulse (2.0*PI*(Diameter/2.0))/CPR //cm
 #define Speed PI*Diameter/CPR
+    
+#define CPR_BY_QEI 800.0
+#define Lead_Pitch 2.0 //unit mm
+#define xPOSITION Lead_Pitch/CPR_BY_QEI
 
 #define MAX_SPD 180 //cm/s - ***************************Need Test
 #define MAX_CPR MAX_SPD

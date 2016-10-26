@@ -1,62 +1,62 @@
 W0      @SCRATCH
 W0L     _RETURN_
-W0 -W2  @DIVFF48.P1
-W0 -W1  @READ_ROM_MEMORY.P2
-W0 -W2  @ADDFF48.P3
-W0 -W3  @DIVS6464.P4
+W0 -W1  @READ_ROM_MEMORY.P1
+W0 -W2  @ADDFF48.P2
+W0 -W3  @ADDFF64.P3
+W0 -W1  @MULFF.P4
 W0 -W1  @DIV3232B.P5
-W0 -W3  @ADDFF64.P6
-W0 -W1  @DIVS3232A.P7
-W0 -W3  @MULS6464.P8
-W0 -W1  @MULS3232.P9
-W0      @delay_us1.P10
-W0 -W2  @F48TO64.P11
-W0 -W3  @MULFF64.P12
-W0 -W3  @F64TO48.P13
-W0 -W3  @PRINTF_E_9600_5725_5724.P14
-W0 -W3  @SI64TOF64.P15
-W0      @delay_ms1.P16
-W0 -W3  @DIVFF64.P17
-W0 -W1  @FLT.P18
-W0 -W2  @MULS4848.P19
-W0 -W1  @MULFF.P20
-W0      @SITOF.P21
-W0 -W1  @ADDFF.P22
-W0 -W1  @DIVFF.P23
+W0 -W1  @DIVS3232A.P6
+W0 -W3  @MULS6464.P7
+W0 -W1  @MULS3232.P8
+W0 -W3  @DIVS6464.P9
+W0 -W2  @MULS4848.P10
+W0 -W3  @MULFF64.P11
+W0 -W2  @F48TO64.P12
+W0 -W3  @SI64TOF64.P13
+W0      @delay_ms1.P14
+W0 -W3  @DIVFF64.P15
+W0      @delay_us1.P16
+W0 -W1  @FLT.P17
+W0 -W1  @ADDFF.P18
+W0 -W2  @MULFF48.P19
+W0 -W1  @MUL3232.P20
+W0 -W1  @DIVFF.P21
+W0 -W3  @SI64TOF48.P22
+W0 -W3  @PRINTF_E_9600_5725_5724.P23
 W0      @PRINTFD16_9600_5725_5724.P24
-W0 -W2  @DIVS4848.P25
-W0 -W3  @SI64TOF48.P26
-W0 -W2  @MULFF48.P27
-W0 -W1  @MUL3232.P28
+W0 -W2  @DIVFF48.P25
+W0 -W2  @DIVS4848.P26
+W0 -W3  @F64TO48.P27
+W0      @SITOF.P28
 W1      @SCRATCH
 W1      @WRITE_PACKED_MEMORY.P1
 W1      @READ_PACKED_MEMORY.P2
-W2 -W3  @DIV3232B.P1
-W2 -W3  @MULS3232.P2
-W2      @READ_PACKED_MEMORY.P3
-W2      @READ_ROM_MEMORY.P4
-W2 -W3  @FLT.P5
-W2 -W3  @ADDFF.P6
-W2 -W3  @MUL3232.P7
-W2 -W3  @DIVS3232A.P8
-W2      @WRITE_PACKED_MEMORY.P9
-W2 -W3  @DIVFF.P10
-W2 -W3  @MULFF.P11
-W3 -W5  @DIVFF48.P1
-W3      @READ_PACKED_MEMORY.P2
-W3 -W5  @MULS4848.P3
-W3      @WRITE_PACKED_MEMORY.P4
-W3      @READ_ROM_MEMORY.P5
-W3 -W5  @DIVS4848.P6
-W3 -W5  @ADDFF48.P7
-W3 -W5  @MULFF48.P8
-W4 -W7  @MULS6464.P1
-W4      @PRINTFD16_9600_5725_5724.P2
-W4      @PRINTF_E_9600_5725_5724.P3
-W4 -W7  @DIVFF64.P4
-W4 -W7  @MULFF64.P5
-W4 -W7  @ADDFF64.P6
-W4 -W7  @DIVS6464.P7
+W2 -W3  @MULS3232.P1
+W2 -W3  @ADDFF.P2
+W2      @READ_ROM_MEMORY.P3
+W2      @READ_PACKED_MEMORY.P4
+W2 -W3  @MUL3232.P5
+W2 -W3  @DIVS3232A.P6
+W2      @WRITE_PACKED_MEMORY.P7
+W2 -W3  @DIV3232B.P8
+W2 -W3  @FLT.P9
+W2 -W3  @MULFF.P10
+W2 -W3  @DIVFF.P11
+W3 -W5  @MULS4848.P1
+W3 -W5  @ADDFF48.P2
+W3      @READ_ROM_MEMORY.P3
+W3 -W5  @DIVFF48.P4
+W3 -W5  @MULFF48.P5
+W3      @READ_PACKED_MEMORY.P6
+W3 -W5  @DIVS4848.P7
+W3      @WRITE_PACKED_MEMORY.P8
+W4      @PRINTFD16_9600_5725_5724.P1
+W4 -W7  @MULS6464.P2
+W4 -W7  @DIVFF64.P3
+W4 -W7  @ADDFF64.P4
+W4 -W7  @DIVS6464.P5
+W4 -W7  @MULFF64.P6
+W4      @PRINTF_E_9600_5725_5724.P7
 630.6   C1OUT
 630.7   C2OUT
 800-801 strtok.save
@@ -75,81 +75,84 @@ W4 -W7  @DIVS6464.P7
 87E-87F SM_Id
 880.0   isX
 880.1   state
+881     Encoder_Trig_State
 882-883 MAIN.Z_Position
 884-885 MAIN.temp
 886-887 MAIN.int_buffer
 88A-88B Change_ADC_Read_Channel.channel
-88A-88B Encoder_Init.en
-88A-88B PID_Init.pid
 88A-88B atoi.s
+88A-88B PID_Init.pid
+88A-88B Encoder_Init.en
 88C-88D atoi.result
 88C-88F PID_Init.Kp
 88E-88F atoi.sign
-890-893 PID_Init.Ki
 890-891 atoi.base
+890-893 PID_Init.Ki
 892-893 atoi.index
 894     atoi.c
 894-897 PID_Init.Kd
-8C6-8C7 Control_Motor.motor_num
-8C8-8CB Control_Motor.speed_velo
-8CC     UART1_Isr.c
-8CE     SM_RxD.c
-8D2-8D3 UpdatePID.pid
-8D4-8D7 UpdatePID.error
-8D8-8DB UpdatePID.position
-8DC-8DF UpdatePID.pTerm
-8E0-8E3 UpdatePID.dTerm
-8E4-8E7 UpdatePID.iTerm
+8C0-8C1 Control_Motor.motor_num
+8C2-8C5 Control_Motor.speed_velo
+8C6-8C7 Encoder_Trig_Change.num_interrupt
+8C8     UART1_Isr.c
+8CA     SM_RxD.c
+8CE-8CF UpdatePID.pid
+8D0-8D3 UpdatePID.error
+8D4-8D7 UpdatePID.position
+8D8-8DB UpdatePID.pTerm
+8DC-8DF UpdatePID.dTerm
+8E0-8E3 UpdatePID.iTerm
 2780-27FF Stack
 
 ROM Allocation:
-000200  @const1151.call
+000200  @const1154.call
 000214  SM_RxD
 00026A  UART1_Isr
-00029A  @SI64TOF64
-0002FE  @MULFF64
-00040E  @DIVFF64
-000516  @F64TO48
-00055A  @ADDFF
-000704  @MULFF
-0007C8  @FLT
-000830  UpdatePID
-000958  Control_Motor
-0009AC  INT_EXT_INPUT0
-000A6E  INT_EXT_INPUT1
-000B30  Init_Interrupts
-000B3C  Init_MotorPWM
-000B54  Init_ADC
-000B6A  Change_ADC_Read_Channel
-000B74  Encoder_Init
-000B92  PID_Init
-000C0C  atoi
-000DA8  PID_X_Y
-000F36  @F48TO64
-000F7C  @PRINTF_E_9600_5725_5724
-001298  @PRINTFD16_9600_5725_5724
-00138E  @cinit1
-00138E  MAIN
-0013DC  @cinit2
+00029A  Encoder_Trig_Change
+0002C2  @SI64TOF64
+000326  @MULFF64
+000436  @DIVFF64
+00053E  @F64TO48
+000582  @ADDFF
+00072C  @MULFF
+0007F0  @FLT
+000858  UpdatePID
+000980  Control_Motor
+0009FE  INT_EXT_INPUT0
+000ACE  INT_EXT_INPUT1
+000BA0  Init_Interrupts
+000BAC  Init_MotorPWM
+000BCA  Change_ADC_Read_Channel
+000BD4  Init_ADC
+000BEA  Encoder_Init
+000C08  PID_Init
+000C82  atoi
+000E1E  PID_X_Y
+000FAC  @F48TO64
+000FF2  @PRINTF_E_9600_5725_5724
+00130E  @PRINTFD16_9600_5725_5724
+001404  MAIN
+001404  @cinit1
+001456  @cinit2
 0136  StrtoulGO
 0136  StrtolGO
 
 Project Directory:
-    D:\Work\Class Projects\3rd Year\Term1\Cookies\MPLABX\Version1\LowLevel.X\
+    E:\3rd Year\Term1\Cookies\MPLABX\Version1\LowLevel.X\
 
 Project Files:
-    main.c                                                  [26-Oct-16 01:06  CRC=B517F586]
-    C:\Program Files (x86)\PICC\devices\24FJ48GA002.h       [12-Nov-13 14:36  CRC=2B092578]
-    PID.h                                                   [24-Oct-16 21:57  CRC=55BBBDB4]
-    Motor.h                                                 [23-Oct-16 20:02  CRC=97780B40]
-    config.h                                                [26-Oct-16 00:48  CRC=9D13712B]
-    C:\Program Files (x86)\PICC\drivers\stdio.h             [31-Jul-07 13:24  CRC=4E4534F4]
-    C:\Program Files (x86)\PICC\drivers\string.h            [14-Jul-11 10:13  CRC=23EDEC8F]
-    C:\Program Files (x86)\PICC\drivers\stddef.h            [16-Jul-10 09:27  CRC=897CEC6C]
-    C:\Program Files (x86)\PICC\drivers\ctype.h             [03-Jan-08 13:55  CRC=2D1F019F]
-    C:\Program Files (x86)\PICC\drivers\stdlib.h            [08-Jun-11 14:39  CRC=0B6669CF]
+    main.c                                                  [26-ต.ค.-16 15:09  CRC=DF949748]
+    C:\Program Files (x86)\PICC\devices\24FJ48GA002.h       [12-พ.ย.-13 14:36  CRC=2B092578]
+    PID.h                                                   [26-ต.ค.-16 14:26  CRC=7CE02B6A]
+    Motor.h                                                 [23-ต.ค.-16 20:02  CRC=97780B40]
+    config.h                                                [26-ต.ค.-16 14:17  CRC=C2DB7786]
+    C:\Program Files (x86)\PICC\drivers\stdio.h             [31-ก.ค.-07 13:24  CRC=4E4534F4]
+    C:\Program Files (x86)\PICC\drivers\string.h            [14-ก.ค.-11 10:13  CRC=23EDEC8F]
+    C:\Program Files (x86)\PICC\drivers\stddef.h            [16-ก.ค.-10 09:27  CRC=897CEC6C]
+    C:\Program Files (x86)\PICC\drivers\ctype.h             [03-ม.ค.-08 13:55  CRC=2D1F019F]
+    C:\Program Files (x86)\PICC\drivers\stdlib.h            [08-มิ.ย.-11 14:39  CRC=0B6669CF]
 
-Source signature=AA043849
+Source signature=216D4E1C
 
 Units:
     main (main)
