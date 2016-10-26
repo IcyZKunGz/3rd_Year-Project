@@ -1,0 +1,72 @@
+W0      @SCRATCH
+W0L     _RETURN_
+W0 -W1  @DIV3232B.P1
+W0 -W1  @READ_ROM_MEMORY.P2
+W0      @delay_ms1.P3
+W0      @delay_us1.P4
+W1      @SCRATCH
+W1      @WRITE_PACKED_MEMORY.P1
+W1      @READ_PACKED_MEMORY.P2
+W2 -W3  @DIV3232B.P1
+W2      @WRITE_PACKED_MEMORY.P2
+W2      @READ_PACKED_MEMORY.P3
+W2      @READ_ROM_MEMORY.P4
+W3      @WRITE_PACKED_MEMORY.P1
+W3      @READ_PACKED_MEMORY.P2
+W3      @READ_ROM_MEMORY.P3
+630.6   C1OUT
+630.7   C2OUT
+800     cmd
+802     @PUTCHAR_1_.P1
+2780-27FF Stack
+
+ROM Allocation:
+000200  @const755.call
+000220  @const756.call
+00023E  @const757.call
+00025C  @const758.call
+00027A  @const759.call
+000298  @const760.call
+0002AA  @const761.call
+0002BC  @const762.call
+0002CE  @const763.call
+0002E0  @GETCH_1_
+000306  rs232_isr
+00032C  @PUTCHAR_1_
+000350  @cinit1
+000350  MAIN
+000364  @cinit2
+
+Project Directory:
+    D:\Work\Class Projects\3rd Year\Term1\Cookies\MPLABX\Test\Test.X\
+
+Project Files:
+    main.c                                                  [25-Oct-16 13:44  CRC=975445A4]
+    C:\Program Files (x86)\PICC\devices\24FJ48GA002.h       [12-Nov-13 14:36  CRC=2B092578]
+
+Source signature=ED669094
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC24FJ48GA002
+    Pointer Size:   16
+    ADC Range:      0-65535
+    Opt Level:      9
+    Short,Int,Long: SIGNED: 8,16,32
+    Float,Double:   32,64
+    Predefined symbols:
+       #define __PIC24FJ48GA002__ 1
+
+Output Files:
+    XREF file:   build\default\production\main.xsym
+    Errors:      build\default\production\main.err
+    Ext Symbols: build\default\production\main.esym
+    INHX8:       build\default\production\main.hex
+    Symbols:     build\default\production\main.sym
+    List:        build\default\production\main.lst
+    Debug/COFF:  build\default\production\main.cof
+    Project:     main.ccspjt
+    Call Tree:   build\default\production\main.tre
+    Statistics:  build\default\production\main.STA

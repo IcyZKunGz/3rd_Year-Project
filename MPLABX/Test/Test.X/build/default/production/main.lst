@@ -1,0 +1,414 @@
+CCS PCD C Compiler, Version 5.015, 5967               25-Oct-16 13:44
+
+               Filename:   D:\Work\Class Projects\3rd Year\Term1\Cookies\MPLABX\Test\Test.X\build\default\production\main.lst
+
+               ROM used:   1174 bytes (3%)
+                           Largest free fragment is 32614
+               RAM used:   129 (2%) at main() level
+                           134 (2%) worst case
+               Stack size: 128
+
+*
+0000:  GOTO    350
+*
+002A:  DATA    06,03,00
+.................... /*  
+....................  * File:   main.c 
+....................  * Author: Arsapol 
+....................  * 
+....................  * Created on October 25, 2016, 1:21 PM 
+....................  */ 
+.................... #include <24FJ48GA002.h> 
+.................... //////////// Standard Header file for the PIC24FJ48GA002 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC24FJ48GA002 
+*
+0200:  CLR     32
+0202:  MOV     #20C,W3
+0204:  ADD     W3,W0,W0
+0206:  TBLRDL.B[W0],W0L
+0208:  CLR.B   1
+020A:  RETURN  
+020C:  DATA    2A,2A,00
+020E:  DATA    20,43,00
+0210:  DATA    6F,6E,00
+0212:  DATA    74,72,00
+0214:  DATA    6F,6C,00
+0216:  DATA    20,4C,00
+0218:  DATA    45,44,00
+021A:  DATA    20,2A,00
+021C:  DATA    2A,0A,00
+021E:  DATA    0D,00,00
+0220:  CLR     32
+0222:  MOV     #22C,W3
+0224:  ADD     W3,W0,W0
+0226:  TBLRDL.B[W0],W0L
+0228:  CLR.B   1
+022A:  RETURN  
+022C:  DATA    41,3A,00
+022E:  DATA    20,4C,00
+0230:  DATA    45,44,00
+0232:  DATA    31,20,00
+0234:  DATA    69,73,00
+0236:  DATA    20,6F,00
+0238:  DATA    6E,2E,00
+023A:  DATA    0A,0D,00
+023C:  DATA    00,00,00
+023E:  CLR     32
+0240:  MOV     #24A,W3
+0242:  ADD     W3,W0,W0
+0244:  TBLRDL.B[W0],W0L
+0246:  CLR.B   1
+0248:  RETURN  
+024A:  DATA    61,3A,00
+024C:  DATA    20,4C,00
+024E:  DATA    45,44,00
+0250:  DATA    31,20,00
+0252:  DATA    69,73,00
+0254:  DATA    20,6F,00
+0256:  DATA    66,66,00
+0258:  DATA    2E,0A,00
+025A:  DATA    0D,00,00
+025C:  CLR     32
+025E:  MOV     #268,W3
+0260:  ADD     W3,W0,W0
+0262:  TBLRDL.B[W0],W0L
+0264:  CLR.B   1
+0266:  RETURN  
+0268:  DATA    42,3A,00
+026A:  DATA    20,4C,00
+026C:  DATA    45,44,00
+026E:  DATA    32,20,00
+0270:  DATA    69,73,00
+0272:  DATA    20,6F,00
+0274:  DATA    6E,2E,00
+0276:  DATA    0A,0D,00
+0278:  DATA    00,00,00
+027A:  CLR     32
+027C:  MOV     #286,W3
+027E:  ADD     W3,W0,W0
+0280:  TBLRDL.B[W0],W0L
+0282:  CLR.B   1
+0284:  RETURN  
+0286:  DATA    62,3A,00
+0288:  DATA    20,4C,00
+028A:  DATA    45,44,00
+028C:  DATA    32,20,00
+028E:  DATA    69,73,00
+0290:  DATA    20,6F,00
+0292:  DATA    66,66,00
+0294:  DATA    2E,0A,00
+0296:  DATA    0D,00,00
+0298:  CLR     32
+029A:  MOV     #2A4,W3
+029C:  ADD     W3,W0,W0
+029E:  TBLRDL.B[W0],W0L
+02A0:  CLR.B   1
+02A2:  RETURN  
+02A4:  DATA    4E,6F,00
+02A6:  DATA    77,20,00
+02A8:  DATA    41,00,00
+02AA:  CLR     32
+02AC:  MOV     #2B6,W3
+02AE:  ADD     W3,W0,W0
+02B0:  TBLRDL.B[W0],W0L
+02B2:  CLR.B   1
+02B4:  RETURN  
+02B6:  DATA    4E,6F,00
+02B8:  DATA    77,20,00
+02BA:  DATA    61,00,00
+02BC:  CLR     32
+02BE:  MOV     #2C8,W3
+02C0:  ADD     W3,W0,W0
+02C2:  TBLRDL.B[W0],W0L
+02C4:  CLR.B   1
+02C6:  RETURN  
+02C8:  DATA    4E,6F,00
+02CA:  DATA    77,20,00
+02CC:  DATA    42,00,00
+02CE:  CLR     32
+02D0:  MOV     #2DA,W3
+02D2:  ADD     W3,W0,W0
+02D4:  TBLRDL.B[W0],W0L
+02D6:  CLR.B   1
+02D8:  RETURN  
+02DA:  DATA    4E,6F,00
+02DC:  DATA    77,20,00
+02DE:  DATA    62,00,00
+....................  
+.................... #list 
+....................  
+.................... #device adc=16 
+.................... #FUSES NOWDT //No Watch Dog Timer 
+.................... #FUSES HS //High speed Osc (> 4mhz for PCM/PCH) (>10mhz for PCD) 
+.................... //#FUSES NOPUT //No Power Up Timer 
+.................... //#FUSES NOBROWNOUT //No brownout reset 
+.................... //#FUSES NOLVP //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... //#FUSES NOCPD //No EE protection 
+.................... #FUSES WRT //Program Memory Write Protected 
+.................... #FUSES NODEBUG //No Debug mode for ICD 
+.................... #FUSES NOPROTECT //Code not protected from reading 
+....................  
+.................... #use delay (clock = 32000000) 
+....................  
+.................... #use rs232(baud=57600, xmit=PIN_B14, rcv=PIN_B15) 
+02E0:  BSET.B  2C9.7
+02E2:  BTSC.B  2CB.7
+02E4:  BRA     2E2
+02E6:  MOV     #8,W3
+02E8:  CLR     W2
+02EA:  REPEAT  #5A
+02EC:  NOP     
+02EE:  REPEAT  #10D
+02F0:  NOP     
+02F2:  BCLR.B  42.0
+02F4:  BTSC.B  2CB.7
+02F6:  BSET.B  42.0
+02F8:  RRC.B   W2L,W2L
+02FA:  DEC     W3,W3
+02FC:  BRA     NZ,2EE
+02FE:  REPEAT  #114
+0300:  NOP     
+0302:  MOV     W2,W0
+0304:  RETURN  
+*
+032C:  BCLR.B  2C9.6
+032E:  BCLR.B  2CD.6
+0330:  MOV     #8,W3
+0332:  REPEAT  #111
+0334:  NOP     
+0336:  RRC.B   802
+0338:  BTSC.B  42.0
+033A:  BSET.B  2CD.6
+033C:  BTSS.B  42.0
+033E:  BCLR.B  2CD.6
+0340:  REPEAT  #10C
+0342:  NOP     
+0344:  DEC     W3,W3
+0346:  BRA     NZ,336
+0348:  BSET.B  2CD.6
+034A:  REPEAT  #113
+034C:  NOP     
+034E:  RETURN  
+.................... // DEFINE LED 
+.................... //#define led1(x) output_bit(pin_d0,x) 
+.................... //#define led2(x) output_bit(pin_d1,x) 
+.................... char cmd; 
+.................... #int_rda 
+....................  
+.................... void rs232_isr(void) { 
+*
+0306:  PUSH    42
+0308:  PUSH    36
+030A:  PUSH    32
+030C:  MOV     W0,[W15++]
+030E:  MOV     #2,W0
+0310:  REPEAT  #C
+0312:  MOV     [W0++],[W15++]
+....................     cmd = getc(); 
+0314:  CALL    2E0
+0318:  MOV.B   W0L,800
+031A:  BCLR.B  85.3
+031C:  MOV     #1A,W0
+031E:  REPEAT  #C
+0320:  MOV     [--W15],[W0--]
+0322:  MOV     [--W15],W0
+0324:  POP     32
+0326:  POP     36
+0328:  POP     42
+032A:  RETFIE  
+.................... } 
+....................  
+.................... void main(void) { 
+*
+0350:  MOV     #2780,W15
+0352:  MOV     #27FF,W0
+0354:  MOV     W0,20
+0356:  NOP     
+0358:  MOV     #4444,W0
+035A:  MOV     W0,A8
+035C:  BSET.B  81.7
+035E:  BCLR.B  2C9.6
+0360:  BSET.B  2CD.6
+0362:  SETM    32C
+....................     enable_interrupts(INT_RDA); 
+0364:  BSET.B  95.3
+....................     enable_interrupts(GLOBAL); 
+0366:  BCLR.B  81.7
+0368:  CLR     42
+036A:  BSET.B  81.7
+....................  
+....................     cmd = 0; 
+036C:  CLR.B   800
+....................  
+....................     printf("** Control LED **\n\r"); 
+036E:  MOV     #0,W1
+0370:  MOV     W1,W0
+0372:  CLR.B   1
+0374:  CALL    200
+0378:  INC     W1,W1
+037A:  MOV     W1,[W15++]
+037C:  MOV.B   W0L,802
+037E:  CALL    32C
+0382:  MOV     [--W15],W1
+0384:  MOV     #12,W0
+0386:  CPSGT   W1,W0
+0388:  BRA     370
+....................     printf("A: LED1 is on.\n\r"); 
+038A:  MOV     #0,W1
+038C:  MOV     W1,W0
+038E:  CLR.B   1
+0390:  CALL    220
+0394:  INC     W1,W1
+0396:  MOV     W1,[W15++]
+0398:  MOV.B   W0L,802
+039A:  CALL    32C
+039E:  MOV     [--W15],W1
+03A0:  MOV     #F,W0
+03A2:  CPSGT   W1,W0
+03A4:  BRA     38C
+....................     printf("a: LED1 is off.\n\r"); 
+03A6:  MOV     #0,W1
+03A8:  MOV     W1,W0
+03AA:  CLR.B   1
+03AC:  CALL    23E
+03B0:  INC     W1,W1
+03B2:  MOV     W1,[W15++]
+03B4:  MOV.B   W0L,802
+03B6:  CALL    32C
+03BA:  MOV     [--W15],W1
+03BC:  MOV     #10,W0
+03BE:  CPSGT   W1,W0
+03C0:  BRA     3A8
+....................     printf("B: LED2 is on.\n\r"); 
+03C2:  MOV     #0,W1
+03C4:  MOV     W1,W0
+03C6:  CLR.B   1
+03C8:  CALL    25C
+03CC:  INC     W1,W1
+03CE:  MOV     W1,[W15++]
+03D0:  MOV.B   W0L,802
+03D2:  CALL    32C
+03D6:  MOV     [--W15],W1
+03D8:  MOV     #F,W0
+03DA:  CPSGT   W1,W0
+03DC:  BRA     3C4
+....................     printf("b: LED2 is off.\n\r"); 
+03DE:  MOV     #0,W1
+03E0:  MOV     W1,W0
+03E2:  CLR.B   1
+03E4:  CALL    27A
+03E8:  INC     W1,W1
+03EA:  MOV     W1,[W15++]
+03EC:  MOV.B   W0L,802
+03EE:  CALL    32C
+03F2:  MOV     [--W15],W1
+03F4:  MOV     #10,W0
+03F6:  CPSGT   W1,W0
+03F8:  BRA     3E0
+....................  
+....................  
+....................     while (TRUE) { 
+....................  
+....................         if (cmd != 0) { 
+03FA:  MOV.B   800,W0L
+03FC:  SE      W0,W0
+03FE:  CP0     W0
+0400:  BRA     Z,492
+....................  
+....................             switch (cmd) { 
+0402:  MOV.B   800,W0L
+0404:  CLR.B   1
+0406:  XOR     #41,W0
+0408:  BRA     Z,418
+040A:  XOR     #20,W0
+040C:  BRA     Z,436
+040E:  XOR     #23,W0
+0410:  BRA     Z,454
+0412:  XOR     #20,W0
+0414:  BRA     Z,472
+0416:  BRA     490
+....................                 case 'A': printf("Now A"); 
+0418:  MOV     #0,W1
+041A:  MOV     W1,W0
+041C:  CLR.B   1
+041E:  CALL    298
+0422:  INC     W1,W1
+0424:  MOV     W1,[W15++]
+0426:  MOV.B   W0L,802
+0428:  CALL    32C
+042C:  MOV     [--W15],W1
+042E:  MOV     #4,W0
+0430:  CPSGT   W1,W0
+0432:  BRA     41A
+....................                     break; 
+0434:  BRA     490
+....................                 case 'a': printf("Now a"); 
+0436:  MOV     #0,W1
+0438:  MOV     W1,W0
+043A:  CLR.B   1
+043C:  CALL    2AA
+0440:  INC     W1,W1
+0442:  MOV     W1,[W15++]
+0444:  MOV.B   W0L,802
+0446:  CALL    32C
+044A:  MOV     [--W15],W1
+044C:  MOV     #4,W0
+044E:  CPSGT   W1,W0
+0450:  BRA     438
+....................                     break; 
+0452:  BRA     490
+....................                 case 'B': printf("Now B"); 
+0454:  MOV     #0,W1
+0456:  MOV     W1,W0
+0458:  CLR.B   1
+045A:  CALL    2BC
+045E:  INC     W1,W1
+0460:  MOV     W1,[W15++]
+0462:  MOV.B   W0L,802
+0464:  CALL    32C
+0468:  MOV     [--W15],W1
+046A:  MOV     #4,W0
+046C:  CPSGT   W1,W0
+046E:  BRA     456
+....................                     break; 
+0470:  BRA     490
+....................                 case 'b': printf("Now b"); 
+0472:  MOV     #0,W1
+0474:  MOV     W1,W0
+0476:  CLR.B   1
+0478:  CALL    2CE
+047C:  INC     W1,W1
+047E:  MOV     W1,[W15++]
+0480:  MOV.B   W0L,802
+0482:  CALL    32C
+0486:  MOV     [--W15],W1
+0488:  MOV     #4,W0
+048A:  CPSGT   W1,W0
+048C:  BRA     474
+....................                     break; 
+048E:  BRA     490
+....................             } 
+....................             cmd = 0; 
+0490:  CLR.B   800
+....................         } 
+0492:  BRA     3FA
+....................  
+....................     } 
+....................  
+.................... } 
+0494:  PWRSAV  #0
+
+Configuration Fuses:
+   Word  1L: 2F7F   WPOSTS16 WDT128 WINDIS NOWDT ICSP1 NODEBUG WRT NOPROTECT NOJTAG
+          H: FF00  
+   Word  2L: FFF6   HS NOALTI2C1 IOL1WAY NOOSCIO FRC_PS SOSC_SEC WUT_DEFAULT IESO
+          H: FF00  

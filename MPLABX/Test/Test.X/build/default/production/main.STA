@@ -1,0 +1,56 @@
+
+ROM used:   1174/33788 (3%)
+            1174/33788 (3%) including unused fragments
+
+            1.3 Average locations per line
+            51.0 Average locations per statement
+
+RAM used:   129/8192 (2%) at main() level
+            134/8192 (2%) worst case
+
+Stack size: 128
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   65    23 100  main.c
+  862     0   0  C:\Program Files (x86)\PICC\devices\24FJ48GA002.h
+----- -----
+  927    23 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     36   2    1             @PUTCHAR_1_
+0     38   2    0             @GETCH_1_
+0     38   2    0    24  1.5  rs232_isr
+0    326  14    0   500  5.1  MAIN
+0     32   1    0             @const755
+0     30   1    0             @const756
+0     30   1    0             @const757
+0     30   1    0             @const758
+0     30   1    0             @const759
+0     18   1    0             @const760
+0     18   1    0             @const761
+0     18   1    0             @const762
+0     18   1    0             @const763
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               2
+    Statements              23
+    Comments                164
+    Volume (V)              593
+    Difficulty (D)          5.3
+    Effort to implement (E) 3127
+    Time to implement (T)   3 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   5
+    Maintainability (MI)    151
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-001FE   508  0  
+00200-083FA   662  32614  
+
+
+
